@@ -1,0 +1,10 @@
+a=list(("".join(input().split())).lower())
+b=list(("".join(input().split())).lower())
+if len(a)==len(b):
+    for i in a:
+        if i in b:
+            b.remove(i)
+    if len(b)==0:
+        print("YES")
+    else: print("NO")
+else: print("NO")

@@ -1,0 +1,7 @@
+a=list(input())
+n=int(input())
+m=max(len(a),n)
+p=[]
+p=abs(m-len(a))*['0']
+p=p+a
+print("".join(p))

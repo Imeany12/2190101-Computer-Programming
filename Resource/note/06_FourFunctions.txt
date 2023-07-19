@@ -1,0 +1,22 @@
+def make_int_list(x):
+    return [int(x) for x in x.split()]
+
+def is_odd(e):
+    if e%2==0:
+        return False
+    else:return True
+
+def odd_list(alist):
+    a=[]
+    for i in alist:
+        if is_odd(i):
+            a.append(i)
+    return a
+
+def sum_square(alist):
+    sum=0
+    for i in alist:
+        sum+=i**2
+    return sum
+
+exec(input().strip())

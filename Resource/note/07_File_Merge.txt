@@ -1,0 +1,34 @@
+def less(id1, id2):
+  return [id1[-2:], id1] < [id2[-2:], id2]
+
+def readnext(f):
+  while True:
+     t = f.readline()
+     if len(t) == 0: # ถ้าอ่านหมดแล้ว ออกจากวงวน
+        break
+     x = t.strip().split() # ลบ blank ซ้ายขวา
+     if len(x) == 2: # แยกแล้วได้ 2 ส่วน --> ถูกต้อง ก็คืนผล
+        return x[0], x[1]
+  return "", "" # แฟ้มหมดแล้ว คืนสตริงว่าง  
+  
+f1,f2 = input().split()
+fn1 = open(f1)
+fn2 = open(f2)
+id1, p1 = readnext(fn1)
+id2, p2 = readnext(fn2)
+while id1 != "" and id2 != "":
+  if less(id1, id2) :
+      print(id1, p1)
+      id1, p1 = readnext(fn1)
+  else:
+      print(id2, p2)
+      id2, p2 = readnext(fn2)
+
+while id1 != "":
+  print(id1, p1)
+  id1, p1 = readnext(fn1)
+  
+while id2 != "":
+  print(id2, p2)
+  id2, p2 = readnext(fn2)
+

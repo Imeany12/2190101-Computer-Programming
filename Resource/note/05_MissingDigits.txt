@@ -1,0 +1,14 @@
+n=input()
+a=10*[0]
+for i in n:
+  if '0'<=i<='9':
+    a[int(i)]+=1
+count=0
+p=[]
+for e in range(len(a)):
+  if a[e]==0:
+    p=p+[str(e)]
+    count+=1
+if count==0:
+  print("None")
+else: print(",".join(p))

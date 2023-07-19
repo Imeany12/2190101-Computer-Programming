@@ -1,0 +1,14 @@
+n=input()
+no="!@#$%^&*()_-+=/|\"\\\'.:;<>?,"
+new=""
+for i in n:
+    if i not in no:
+        new+=i
+    else: new+=' '
+new=new.split()
+new[0]=new[0].lower()
+for i in range(1,len(new)):
+    C=new[i][0].upper()
+    lo=new[i][1::].lower()
+    new[i]=C+lo
+print("".join(new))

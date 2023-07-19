@@ -1,0 +1,16 @@
+a,b=input().split()
+fn=open(a,'r')
+m=[]
+sum=0
+count=0
+for line in fn:
+    id,score=line.strip().split()
+    if id[0]+id[1]==b[2]+b[3]:
+        score=float(score)
+        m+=[score]
+        sum+=score
+        count+=1
+if m==[]:
+    print("No data")
+else:print(min(m),max(m),sum/count)
+fn.close()

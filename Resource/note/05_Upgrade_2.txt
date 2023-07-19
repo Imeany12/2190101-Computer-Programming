@@ -1,0 +1,22 @@
+a=input()
+id=[]
+gr=[]
+new=[]
+grade=['A','B+','B','C+','C','D+','D','F']
+while a!='q':
+    b,c=a.split()
+    id+=[b]
+    gr+=[c]
+    a=input()
+uid=input().split()
+for i in range(len(uid)):
+    for j in range(len(id)):
+        if uid[i]==id[j]:
+            index=grade.index(gr[j])
+            if gr[j]!='A':
+                gr[j]=grade[index-1]
+for e in range(len(id)):
+    new.append(id[e]+" "+gr[e])
+new.sort()
+for i in new:
+    print(i)

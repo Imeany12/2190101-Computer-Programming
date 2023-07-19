@@ -1,0 +1,10 @@
+a=int(input())
+for x in range(a-1):
+    for y in range(2*a-1):
+        if y!=a-x-1 and y!=a+x-1:
+            print(' ',end='')
+        else:
+            print('*',end='')
+    print('\n')
+for z in range(2*a-1):
+    print('*',end='')

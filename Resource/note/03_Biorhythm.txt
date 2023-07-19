@@ -1,0 +1,38 @@
+import math 
+bd,bm,by,d,m,y=[int(e) for e in input().split()]
+y=y-543
+by=by-543
+month=[31,28,31,30,31,30,31,31,30,31,30,31]
+totalday=0
+def ifleap(y):
+    if (y%4==0 and y%100!=0) or y%400==0:
+        month[1]=29
+    else: month[1]=28
+def first(d,m,y):
+    ifleap(y)
+    day=0
+    if m!=12:
+        monthleft=month[m::]
+    else:
+        monthleft=[]
+    count=0
+    for i in range(m,m+len(monthleft)):
+        count+=month[i]
+    return month[m-1]-d+count+1
+def last(d,m,y):
+    ifleap(y)
+    day=0
+    if m!=1:
+        monthleft=month[1:m]
+    else:
+        monthleft=[]
+    count=0
+    for i in range(len(monthleft)):
+        count+=month[i]
+    return d+count-1
+
+totalday=first(bd,bm,by)+last(d,m,y)+365*(y-by-1)
+phys=math.sin(2*(math.pi)*totalday/23)
+emo=math.sin(2*(math.pi)*totalday/28)
+intel=math.sin(2*(math.pi)*totalday/33)
+print(totalday,"{:.2f}".format(phys),"{:.2f}".format(emo),"{:.2f}".format(intel))

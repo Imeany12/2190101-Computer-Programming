@@ -1,0 +1,15 @@
+def cut(deck):
+    return deck[len(deck)//2:]+deck[:len(deck)//2]
+def shuffle(deck):
+    z=len(deck)*[0]
+    z[::2]=deck[:len(deck)//2]
+    z[1::2]=deck[len(deck)//2:]
+    return z
+deck=list(input().split())
+f=input()
+for i in f:
+    if i=='C':
+        deck=cut(deck)
+    if i=='S':
+        deck=shuffle(deck)
+print(" ".join(deck))
