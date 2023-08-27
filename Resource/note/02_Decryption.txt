@@ -1,8 +1,0 @@
-n=input()
-a=n[3]+n[10]+n[17]+n[24]+n[31]
-b=n[7]+n[12]+n[17]+n[22]+n[27]
-c=str(int(a)+int(b)+10000)
-d=c[len(c)-4]+c[len(c)-3]+c[len(c)-2]
-e=int(d[0])+int(d[1])+int(d[2])
-e=e%10+1
-print(d+chr(e+64))
